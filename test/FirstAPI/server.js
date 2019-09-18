@@ -3,7 +3,7 @@ var app = express();
 var bodyParer = require('body-parser');
 
 app.use(bodyParer.json());
-app.use(body.bodyParer.urlencoded({extended: false}));
+app.use(bodyParer.urlencoded({extended: false}));
 
 var ingredients = [
     {
@@ -16,7 +16,7 @@ var ingredients = [
     },
     {
         "id": "234kDA",
-        "text":"Break",
+        "text":"Bread",
     },
     {
         "id": "23434k",
@@ -27,6 +27,16 @@ var ingredients = [
 app.get('/', function(request, response){
     response.send(ingredients);
 });
+
+app.post('/', function(request, response){
+    var ingredient= request.body;
+    if(!ingredient || ingredient.text === ""){
+        response.status(500).send({error: "Your ingredient must have text"});
+    } else {
+        ingredients.push(ingredient);
+        response.status(200).send(ingredients);
+    }
+})
 
 app.listen(3000, function(){
     console.log("First API running on port 3000!");
