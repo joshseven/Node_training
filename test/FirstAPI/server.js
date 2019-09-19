@@ -22,6 +22,10 @@ var ingredients = [
         "id": "23434k",
         "text":"Chicken",
     }
+    {
+        "id": "23434k",
+        "text":"Water",
+    }
 ];
 
 app.get('/ingredients', function(request, response){
@@ -37,6 +41,7 @@ app.post('/ingredients', function(request, response){
         response.status(200).send(ingredients);
     }
 })
+
 
 app.put('/ingredients/:ingredientId',function(request, response){
     
