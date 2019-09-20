@@ -5,6 +5,7 @@ var bodyParer = require('body-parser');
 app.use(bodyParer.json());
 app.use(bodyParer.urlencoded({extended: false}));
 
+// Similar to JSON coding
 var ingredients = [
     {
         "id": "234kak",
