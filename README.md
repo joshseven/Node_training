@@ -2,6 +2,7 @@
 
 Intro to JSON
   Key:Values
+  Use cases
   
 Intro to MongoDB
   Installation
