@@ -8,3 +8,4 @@ Intro to MongoDB
   Installation
   Format
   Key commands
+  Symbols
